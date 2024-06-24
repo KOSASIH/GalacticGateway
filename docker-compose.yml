@@ -1,0 +1,15 @@
+version: '3'
+services:
+  ganache:
+    image: trufflesuite/ganache-cli:v6.12.2
+    ports:
+      - "8545:8545"
+    command: ["ganache-cli", "--gasPrice", "20000000000", "--gasLimit", "8000000"]
+  galactic-gateway:
+    build:.
+    ports:
+      - "3000:3000"
+    depends_on:
+      - ganache
+    environment:
+      - WEB3_PROVIDER=http://ganache:8545
