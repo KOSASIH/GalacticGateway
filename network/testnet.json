@@ -1,41 +1,56 @@
 {
-  "network": {
-    "name": "GalacticTestNet",
-    "version": "1.0.0",
-    "chainId": "0x02",
-    "genesisBlock": "0x0000000000000000000000000000000000000000000000000000000000000001",
-    "blockTime": 10,
-    "gasLimit": 5000000,
-    "gasPrice": 10000000000,
-    "difficulty": 1000000,
-    "reward": 100000000000000000
-  },
-  "nodes": [
-    {
-      "id": "testnode1",
-      "url": "https://testnode1.galacticgateway.io",
-      "port": 8545,
-      "type": "full"
-    },
-    {
-      "id": "testnode2",
-      "url": "https://testnode2.galacticgateway.io",
-      "port": 8545,
-      "type": "full"
-    }
+  "name": "GalacticGateway Testnet",
+  "description": "Decentralized, interconnected network of blockchain systems (testnet)",
+  "version": "1.0",
+  "chainId": 2,
+  "networkId": 2,
+  "bootnodes": [
+    "/ip4/127.0.0.1/tcp/30304/ipfs/QmHash"
   ],
-  "contracts": {
-    "GalacticToken": {
-      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-      "abi": [...]
+  "genesis": {
+    "timestamp": "2024-06-01T00:00:00.000Z",
+    "gasLimit": 1000000,
+    "difficulty": 100,
+    "alloc": {
+      "0x0000000000000000000000000000000000000002": {
+        "balance": "100000000000000000000"
+      }
     }
   },
-  "oracles": [
-    {
-      "id": "testoracle1",
-      "url": "https://testoracle1.galacticgateway.io",
-      "port": 8080,
-      "type": "priceFeed"
-    }
-  ]
+  "consensus": {
+    "algorithm": "ethash",
+    "epochLength": 30000,
+    "targetGasLimit": 1000000
+  },
+  "gasPrice": {
+    "min": 1000000000,
+    "max": 100000000000
+  },
+  "blockTime": 15,
+  "maxPeers": 20,
+  "minPeers": 5,
+  "maxPendingPeers": 50,
+  "minPendingPeers": 20,
+  "node": {
+    "maxConnections": 50,
+    "maxPendingConnections": 20
+  },
+  "txpool": {
+    "maxTransactions": 500,
+    "maxGas": 500000
+  },
+  "rpc": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 8547,
+    "corsDomain": "*",
+    "apis": ["eth", "net", "web3"]
+  },
+  "ws": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 8548,
+    "corsDomain": "*",
+    "apis": ["eth", "net", "web3"]
+  }
 }
