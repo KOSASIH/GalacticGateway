@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: galactic-gateway
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: galactic-gateway
+  template:
+    metadata:
+      labels:
+        app: galactic-gateway
+    spec:
+      containers:
+      - name: galactic-gateway
+        image: galactic-gateway:latest
+        ports:
+        - containerPort: 3000
