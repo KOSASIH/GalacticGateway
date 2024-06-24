@@ -1,0 +1,14 @@
+{
+  "networks": {
+    "mainnet": {
+      "url": "https://mainnet.infura.io/v3/YOUR_PROJECT_ID",
+      "gas": "2000000",
+      "gasPrice": "20.0"
+    },
+    "testnet": {
+      "url": "https://testnet.infura.io/v3/YOUR_PROJECT_ID",
+      "gas": "2000000",
+      "gasPrice": "20.0"
+    }
+  }
+}
