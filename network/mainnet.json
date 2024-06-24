@@ -1,57 +1,56 @@
 {
-  "network": {
-    "name": "GalacticMainNet",
-    "version": "1.0.0",
-    "chainId": "0x01",
-    "genesisBlock": "0x0000000000000000000000000000000000000000000000000000000000000000",
-    "blockTime": 15,
-    "gasLimit": 10000000,
-    "gasPrice": 20000000000,
-    "difficulty": 1000000000,
-    "reward": 1000000000000000000
-  },
-  "nodes": [
-    {
-      "id": "node1",
-      "url": "https://node1.galacticgateway.io",
-      "port": 8545,
-      "type": "full"
-    },
-    {
-      "id": "node2",
-      "url": "https://node2.galacticgateway.io",
-      "port": 8545,
-      "type": "full"
-    },
-    {
-      "id": "node3",
-      "url": "https://node3.galacticgateway.io",
-      "port": 8545,
-      "type": "light"
-    }
+  "name": "GalacticGateway Mainnet",
+  "description": "Decentralized, interconnected network of blockchain systems",
+  "version": "1.0",
+  "chainId": 1,
+  "networkId": 1,
+  "bootnodes": [
+    "/ip4/127.0.0.1/tcp/30303/ipfs/QmHash"
   ],
-  "contracts": {
-    "GalacticToken": {
-      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
-      "abi": [...]
-    },
-    "GalacticNFT": {
-      "address": "0x55241586d5046974586480469745864804697458",
-      "abi": [...]
+  "genesis": {
+    "timestamp": "2024-06-01T00:00:00.000Z",
+    "gasLimit": 1000000,
+    "difficulty": 1000,
+    "alloc": {
+      "0x0000000000000000000000000000000000000001": {
+        "balance": "100000000000000000000"
+      }
     }
   },
-  "oracles": [
-    {
-      "id": "oracle1",
-      "url": "https://oracle1.galacticgateway.io",
-      "port": 8080,
-      "type": "priceFeed"
-    },
-    {
-      "id": "oracle2",
-      "url": "https://oracle2.galacticgateway.io",
-      "port": 8080,
-      "type": "weatherFeed"
-    }
-  ]
+  "consensus": {
+    "algorithm": "ethash",
+    "epochLength": 30000,
+    "targetGasLimit": 1000000
+  },
+  "gasPrice": {
+    "min": 1000000000,
+    "max": 100000000000
+  },
+  "blockTime": 15,
+  "maxPeers": 50,
+  "minPeers": 10,
+  "maxPendingPeers": 100,
+  "minPendingPeers": 50,
+  "node": {
+    "maxConnections": 100,
+    "maxPendingConnections": 50
+  },
+  "txpool": {
+    "maxTransactions": 1000,
+    "maxGas": 1000000
+  },
+  "rpc": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 8545,
+    "corsDomain": "*",
+    "apis": ["eth", "net", "web3"]
+  },
+  "ws": {
+    "enabled": true,
+    "host": "localhost",
+    "port": 8546,
+    "corsDomain": "*",
+    "apis": ["eth", "net", "web3"]
+  }
 }
