@@ -1,0 +1,57 @@
+{
+  "network": {
+    "name": "GalacticMainNet",
+    "version": "1.0.0",
+    "chainId": "0x01",
+    "genesisBlock": "0x0000000000000000000000000000000000000000000000000000000000000000",
+    "blockTime": 15,
+    "gasLimit": 10000000,
+    "gasPrice": 20000000000,
+    "difficulty": 1000000000,
+    "reward": 1000000000000000000
+  },
+  "nodes": [
+    {
+      "id": "node1",
+      "url": "https://node1.galacticgateway.io",
+      "port": 8545,
+      "type": "full"
+    },
+    {
+      "id": "node2",
+      "url": "https://node2.galacticgateway.io",
+      "port": 8545,
+      "type": "full"
+    },
+    {
+      "id": "node3",
+      "url": "https://node3.galacticgateway.io",
+      "port": 8545,
+      "type": "light"
+    }
+  ],
+  "contracts": {
+    "GalacticToken": {
+      "address": "0x742d35Cc6634C0532925a3b844Bc454e4438f44e",
+      "abi": [...]
+    },
+    "GalacticNFT": {
+      "address": "0x55241586d5046974586480469745864804697458",
+      "abi": [...]
+    }
+  },
+  "oracles": [
+    {
+      "id": "oracle1",
+      "url": "https://oracle1.galacticgateway.io",
+      "port": 8080,
+      "type": "priceFeed"
+    },
+    {
+      "id": "oracle2",
+      "url": "https://oracle2.galacticgateway.io",
+      "port": 8080,
+      "type": "weatherFeed"
+    }
+  ]
+}
